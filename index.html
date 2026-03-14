@@ -184,7 +184,7 @@
           </label>
 
           <label>
-            Number of Guests
+            Number of Adult Guests
             <select name="guestCount" required>
               <option value="">Select one</option>
               <option value="1">1</option>
@@ -195,12 +195,13 @@
           </label>
 
           <label>
-            Meal Choice
-            <select name="mealChoice">
+            Number of Children Guests
+            <select name="guestCountChild" required>
               <option value="">Select one</option>
-              <option value="Chicken">Chicken</option>
-              <option value="Beef">Beef</option>
-              <option value="Vegetarian">Vegetarian</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
             </select>
           </label>
 
@@ -226,12 +227,12 @@
   <footer class="footer">
     <div class="wrap footer-inner">
       <p>Laura &amp; Michael · July 24, 2026 · Sandusky, Ohio</p>
-      <p class="tiny">Tip: when you add a QR code to your invitation, point it to this page so guests land on a mobile-friendly RSVP screen.</p>
+      <p class="tiny"></p>
     </div>
   </footer>
 
   <script>
-    window.RSVP_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwoLn8IXmJS8CvGORmd0FrPk9t5a1U43DvAoVeUd1v8qQJUi_yNRj-aq9Pt04QUd-07/exec';
+    window.RSVP_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwhN6H_ygTVQNmCnjzAKOBobSBve5Ax1VGTdCrNxM1oUUIgHX6aSYMpY9sPnYg9Fr9J/exec';
   </script>
   <script src="script.js"></script>
 </body>
