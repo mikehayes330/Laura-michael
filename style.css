@@ -17,6 +17,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: 'Libre Baskerville', serif;
+  scroll-behavior:smooth;
   line-height: 1.5;
 }
 img { display: block; width: 100%; height: 100%; object-fit: cover; }
@@ -399,4 +400,46 @@ border:4px solid #b64b4b;
 border-radius:16px;
 overflow:hidden;
 box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.dora-section{
+margin-top:50px;
+background:white;
+padding:28px;
+border-radius:16px;
+box-shadow:0 6px 18px rgba(0,0,0,0.05);
+border:3px solid #b64b4b;
+text-align:center;
+}
+
+.dora-section h2{
+color:#244a86;
+margin-bottom:12px;
+text-align:center;
+}
+
+.dora-section p{
+max-width:700px;
+margin:12px auto;
+color:#444;
+}
+
+.dora-intro{
+margin-top:30px;
+text-align:center;
+font-size:1.1rem;
+max-width:750px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.dora-intro a{
+color:#b64b4b;
+font-weight:bold;
+text-decoration:none;
+border-bottom:2px solid #b64b4b;
+}
+
+.dora-intro a:hover{
+opacity:.7;
 }
