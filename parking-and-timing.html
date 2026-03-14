@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parking & Timing | Laura & Michael</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+	:root {
+	  --blue: #244a86;
+	  --red: #b64b4b;
+	  --text: #2d2d2d;
+	  --muted: #6b6b6b;
+	  --bg: #f4f1ec;
+	  --card: #ffffff;
+	  --shadow: 0 10px 30px rgba(0,0,0,0.06);
+	}
+
+	* { box-sizing: border-box; }
+
+	html { scroll-behavior: smooth; }
+
+	body {
+	  margin: 0;
+	  font-family: Georgia, "Times New Roman", serif;
+	  color: var(--text);
+	  background: var(--bg);
+	  line-height: 1.6;
+	}
+
+	a {
+	  color: inherit;
+	  text-decoration: none;
+	}
+
+	.page-wrap {
+	  max-width: 1120px;
+	  margin: 0 auto;
+	  padding: 24px 18px 64px;
+	}
+
+	.top-link {
+	  display: inline-flex;
+	  align-items: center;
+	  gap: 8px;
+	  font-size: 0.95rem;
+	  color: var(--blue);
+	  margin-bottom: 20px;
+	  border-bottom: 1px solid transparent;
+	}
+
+	.top-link:hover {
+	  border-color: var(--blue);
+	}
+
+	.hero {
+	  text-align: center;
+	  padding: 18px 0 20px;
+	}
+
+	.hero-kicker {
+	  text-transform: uppercase;
+	  letter-spacing: 0.2em;
+	  font-size: 0.78rem;
+	  color: var(--red);
+	  margin-bottom: 14px;
+	}
+
+	.hero h1 {
+	  margin: 0;
+	  color: var(--blue);
+	  font-size: clamp(2.2rem, 5vw, 4.2rem);
+	  font-weight: 600;
+	  line-height: 1.05;
+	}
+
+	.hero-sub {
+	  max-width: 760px;
+	  margin: 18px auto 0;
+	  font-size: 1.08rem;
+	  color: var(--muted);
+	}
+
+	.red-lines {
+	  width: 180px;
+	  margin: 26px auto 0;
+	  display: flex;
+	  flex-direction: column;
+	  gap: 8px;
+	}
+
+	.red-lines span {
+	  display: block;
+	  height: 2px;
+	  background: var(--red);
+	  border-radius: 999px;
+	}
+
+	.map-section,
+	.detail-card,
+	.notes-card {
+	  background: #fff;
+	  border: 2px solid #d8cfc5;
+	  border-radius: 22px;
+	  box-shadow: var(--shadow);
+	}
+
+	.map-section {
+	  margin-top: 34px;
+	  padding: 24px;
+	}
+
+	.map-section h2,
+	.section-title {
+	  text-align: center;
+	  color: var(--blue);
+	  margin-top: 0;
+	  margin-bottom: 10px;
+	  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+	}
+
+	.section-copy {
+	  text-align: center;
+	  color: var(--muted);
+	  max-width: 760px;
+	  margin: 0 auto 20px;
+	}
+
+	.divider {
+	  width: 130px;
+	  height: 2px;
+	  background: var(--red);
+	  margin: 18px auto 22px;
+	  position: relative;
+	}
+
+	.divider::after {
+	  content: "";
+	  width: 70px;
+	  height: 2px;
+	  background: var(--red);
+	  position: absolute;
+	  left: 50%;
+	  transform: translateX(-50%);
+	  top: 8px;
+	}
+
+	.map-container {
+	  border: 3px solid var(--red);
+	  border-radius: 18px;
+	  overflow: hidden;
+	}
+
+	.grid {
+	  display: grid;
+	  grid-template-columns: repeat(12, 1fr);
+	  gap: 18px;
+	  margin-top: 30px;
+	}
+
+	.detail-card {
+	  grid-column: span 6;
+	  padding: 26px;
+	  position: relative;
+	}
+
+	.detail-card::before {
+	  content: "";
+	  position: absolute;
+	  left: 0;
+	  right: 0;
+	  top: 0;
+	  height: 4px;
+	  background: var(--red);
+	  border-radius: 22px 22px 0 0;
+	}
+
+	.eyebrow {
+	  display: inline-block;
+	  margin-bottom: 10px;
+	  font-size: 0.78rem;
+	  letter-spacing: 0.14em;
+	  text-transform: uppercase;
+	  color: var(--red);
+	}
+
+	.detail-card h3 {
+	  margin: 0 0 12px;
+	  color: var(--blue);
+	  font-size: 1.5rem;
+	}
+
+	.detail-card p {
+	  margin: 0 0 12px;
+	}
+
+	.detail-card ul {
+	  margin: 12px 0 0 18px;
+	  padding: 0;
+	}
+
+	.detail-card li {
+	  margin-bottom: 8px;
+	}
+
+	.button-row {
+	  display: flex;
+	  flex-wrap: wrap;
+	  gap: 10px;
+	  margin-top: 18px;
+	}
+
+	.btn {
+	  display: inline-flex;
+	  align-items: center;
+	  justify-content: center;
+	  min-height: 42px;
+	  padding: 10px 16px;
+	  border-radius: 999px;
+	  border: 1px solid var(--red);
+	  color: var(--red);
+	  background: transparent;
+	  font-size: 0.95rem;
+	  transition: 0.2s ease;
+	}
+
+	.btn:hover {
+	  background: var(--red);
+	  color: #fff;
+	}
+
+	.notes-card {
+	  margin-top: 28px;
+	  padding: 28px;
+	  border-color: var(--red);
+	  text-align: center;
+	}
+
+	.notes-card p {
+	  max-width: 800px;
+	  margin: 12px auto;
+	  color: var(--text);
+	}
+
+	.footer-nav {
+	  text-align: center;
+	  margin-top: 50px;
+	}
+
+	.footer-nav a {
+	  color: var(--blue);
+	  border-bottom: 1px solid transparent;
+	  padding-bottom: 2px;
+	}
+
+	.footer-nav a:hover {
+	  border-color: var(--blue);
+	}
+
+	@media (max-width: 900px) {
+	  .detail-card {
+		grid-column: span 12;
+	  }
+	}
+
+	@media (max-width: 640px) {
+	  .page-wrap {
+		padding: 18px 14px 48px;
+	  }
+
+	  .map-section,
+	  .detail-card,
+	  .notes-card {
+		padding: 18px;
+	  }
+
+	  .btn {
+		width: 100%;
+	  }
+	}
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+	<a class="top-link" href="index.html">← Back to Wedding Website</a>
+
+	<section class="hero">
+	  <div class="hero-kicker">Wedding Day Details</div>
+	  <h1>Parking & Timing</h1>
+	  <p class="hero-sub">
+		A little extra detail for the day so everyone knows where to go, where to park,
+		and how the timing will flow between the ceremony and reception.
+	  </p>
+	  <div class="red-lines">
+		<span></span>
+		<span></span>
+	  </div>
+	</section>
+
+	<section class="map-section">
+	  <h2>Wedding Day Map</h2>
+	  <p class="section-copy">
+		This map can include the church, the reception, and a few nearby parking options
+		for each location.
+	  </p>
+	  <div class="divider"></div>
+
+	  <div class="map-container">
+		<iframe
+		  src="https://www.google.com/maps/d/embed?mid=1Vm6ti_WgAJZTV2BUU4HZrT_jNQPdUzY&hl=en&ehbc=2E312F"
+		  width="100%"
+		  height="460"
+		  style="border:0;"
+		  allowfullscreen=""
+		  loading="lazy">
+		</iframe>
+	  </div>
+	</section>
+
+	<div class="grid">
+	  <section class="detail-card">
+		<span class="eyebrow">Ceremony</span>
+		<h3>St. Mary’s Church</h3>
+		<p><strong>Address:</strong> 429 Central Ave, Sandusky, OH 44870</p>
+		<p><strong>Arrival Time:</strong> We recommend arriving by 3:30 PM for a 4:00 PM ceremony.</p>
+		<p><strong>Parking:</strong> There are several nearby options for guests.</p>
+		<ul>
+		  <li>Church parking lot</li>
+		  <li>Street parking nearby</li>
+		  <li>Additional overflow lot if needed</li>
+		</ul>
+		<p>
+		  You can add a more detailed note here about where guests should enter,
+		  whether the church lot fills up quickly, and whether parking is an easy walk.
+		</p>
+		<div class="button-row">
+		  <a class="btn" href="https://maps.google.com/?q=St+Marys+Church+Sandusky+OH" target="_blank" rel="noopener">Church in Maps</a>
+		  <a class="btn" href="https://maps.google.com/?q=parking+near+St+Marys+Church+Sandusky+OH" target="_blank" rel="noopener">Nearby Parking</a>
+		</div>
+	  </section>
+
+	  <section class="detail-card">
+		<span class="eyebrow">Reception</span>
+		<h3>Goodtime Cruise</h3>
+		<p><strong>Address:</strong> Replace with the exact reception address</p>
+		<p><strong>Arrival Time:</strong> Add your reception or boarding timing here.</p>
+		<p><strong>Parking:</strong> Include the easiest guest parking options for the reception area.</p>
+		<ul>
+		  <li>Main lot near the venue</li>
+		  <li>Overflow parking option</li>
+		  <li>Waterfront/public parking if applicable</li>
+		</ul>
+		<p>
+		  This is a good spot to explain if guests should head directly to the boat,
+		  check in somewhere first, or allow extra time for walking.
+		</p>
+		<div class="button-row">
+		  <a class="btn" href="https://maps.google.com/?q=Goodtime+Cruise+Sandusky+OH" target="_blank" rel="noopener">Reception in Maps</a>
+		  <a class="btn" href="https://maps.google.com/?q=parking+near+Goodtime+Cruise+Sandusky+OH" target="_blank" rel="noopener">Nearby Parking</a>
+		</div>
+	  </section>
+	</div>
+
+	<section class="notes-card">
+	  <h2 class="section-title">Helpful Notes</h2>
+	  <div class="divider"></div>
+	  <p>
+		Guests should plan a little extra time between the ceremony and reception for travel,
+		parking, and getting settled. You can explain here whether the drive is quick,
+		whether downtown traffic can be busy, and where you recommend guests go first.
+	  </p>
+	  <p>
+		This section is also a good place for details like:
+		“If the church lot is full, street parking is usually available nearby,”
+		or “Please allow a few extra minutes for waterfront parking on summer weekends.”
+	  </p>
+	</section>
+
+	<div class="footer-nav">
+	  <a href="index.html">← Back to Laura & Michael’s Wedding Website</a>
+	</div>
+  </div>
+</body>
+</html>
