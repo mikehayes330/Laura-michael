@@ -372,3 +372,15 @@ textarea { resize: vertical; }
     border-radius: 16px;
   }
 }
+
+.card-link{
+text-decoration:none;
+color:inherit;
+display:block;
+}
+
+.card-link:hover .info-card{
+transform:translateY(-3px);
+box-shadow:0 6px 15px rgba(0,0,0,.1);
+}
+

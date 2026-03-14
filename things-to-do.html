@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Things To Do | Laura & Michael</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+	:root {
+	  --blue: #244a86;
+	  --red: #b64b4b;
+	  --text: #2d2d2d;
+	  --muted: #6b6b6b;
+	  --bg: #f4f1ec;
+	  --card: #ffffff;
+	  --line: #d8cfc5;
+	  --shadow: 0 10px 30px rgba(0,0,0,0.06);
+	}
+
+	* {
+	  box-sizing: border-box;
+	}
+
+	body {
+	  margin: 0;
+	  font-family: Georgia, "Times New Roman", serif;
+	  color: var(--text);
+	  background: var(--bg);
+	  line-height: 1.6;
+	}
+
+	a {
+	  color: inherit;
+	  text-decoration: none;
+	}
+
+	.page-wrap {
+	  max-width: 1120px;
+	  margin: 0 auto;
+	  padding: 24px 18px 64px;
+	}
+
+	.top-link {
+	  display: inline-flex;
+	  align-items: center;
+	  gap: 8px;
+	  font-size: 0.95rem;
+	  color: var(--blue);
+	  margin-bottom: 20px;
+	  border-bottom: 1px solid transparent;
+	}
+
+	.top-link:hover {
+	  border-color: var(--blue);
+	}
+
+	.hero {
+	  text-align: center;
+	  padding: 18px 0 20px;
+	}
+
+	.hero-kicker {
+	  text-transform: uppercase;
+	  letter-spacing: 0.2em;
+	  font-size: 0.78rem;
+	  color: var(--red);
+	  margin-bottom: 14px;
+	}
+
+	.hero h1 {
+	  margin: 0;
+	  color: var(--blue);
+	  font-size: clamp(2.2rem, 5vw, 4.2rem);
+	  font-weight: 600;
+	  line-height: 1.05;
+	}
+
+	.hero-sub {
+	  max-width: 760px;
+	  margin: 18px auto 0;
+	  font-size: 1.08rem;
+	  color: var(--muted);
+	}
+
+	.red-lines {
+	  width: 180px;
+	  margin: 26px auto 0;
+	  display: flex;
+	  flex-direction: column;
+	  gap: 8px;
+	}
+
+	.red-lines span {
+	  display: block;
+	  height: 2px;
+	  background: var(--red);
+	  border-radius: 999px;
+	}
+
+	.quick-nav {
+	  display: flex;
+	  justify-content: center;
+	  flex-wrap: wrap;
+	  gap: 12px;
+	  margin: 34px 0 18px;
+	}
+
+	.quick-nav a {
+	  background: rgba(255,255,255,0.75);
+	  border: 1px solid #ddd3c9;
+	  padding: 10px 16px;
+	  border-radius: 999px;
+	  font-size: 0.95rem;
+	  color: var(--blue);
+	  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+	}
+
+	.quick-nav a:hover {
+	  border-color: var(--red);
+	  color: var(--red);
+	}
+
+	.section {
+	  margin-top: 52px;
+	}
+
+	.section-header {
+	  text-align: center;
+	  margin-bottom: 26px;
+	}
+
+	.section-header .eyebrow {
+	  text-transform: uppercase;
+	  letter-spacing: 0.16em;
+	  font-size: 0.74rem;
+	  color: var(--red);
+	  margin-bottom: 10px;
+	}
+
+	.section-header h2 {
+	  margin: 0;
+	  color: var(--blue);
+	  font-size: clamp(1.7rem, 3vw, 2.5rem);
+	  font-weight: 600;
+	}
+
+	.section-header p {
+	  max-width: 680px;
+	  margin: 12px auto 0;
+	  color: var(--muted);
+	}
+
+	.divider {
+	  width: 130px;
+	  height: 2px;
+	  background: var(--red);
+	  margin: 18px auto 0;
+	  position: relative;
+	}
+
+	.divider::after {
+	  content: "";
+	  width: 70px;
+	  height: 2px;
+	  background: var(--red);
+	  position: absolute;
+	  left: 50%;
+	  transform: translateX(-50%);
+	  top: 8px;
+	}
+
+	.grid {
+	  display: grid;
+	  grid-template-columns: repeat(12, 1fr);
+	  gap: 18px;
+	}
+
+	.card {
+	  grid-column: span 6;
+	  background: var(--card);
+	  border: 1px solid #e6ddd4;
+	  border-radius: 22px;
+	  overflow: hidden;
+	  box-shadow: var(--shadow);
+	  display: flex;
+	  flex-direction: column;
+	}
+
+	.card-image {
+	  height: 210px;
+	  background-size: cover;
+	  background-position: center;
+	  background-color: #ddd;
+	}
+
+	.card-body {
+	  padding: 22px 22px 20px;
+	}
+
+	.card h3 {
+	  margin: 0 0 8px;
+	  color: var(--blue);
+	  font-size: 1.45rem;
+	  font-weight: 600;
+	}
+
+	.card .tag {
+	  display: inline-block;
+	  margin-bottom: 12px;
+	  font-size: 0.78rem;
+	  letter-spacing: 0.14em;
+	  text-transform: uppercase;
+	  color: var(--red);
+	}
+
+	.card p {
+	  margin: 0 0 14px;
+	  color: var(--text);
+	}
+
+	.card .note {
+	  color: var(--muted);
+	  font-size: 0.96rem;
+	}
+
+	.card-actions {
+	  display: flex;
+	  flex-wrap: wrap;
+	  gap: 10px;
+	  margin-top: 18px;
+	}
+
+	.btn {
+	  display: inline-flex;
+	  align-items: center;
+	  justify-content: center;
+	  min-height: 42px;
+	  padding: 10px 16px;
+	  border-radius: 999px;
+	  border: 1px solid var(--red);
+	  color: var(--red);
+	  background: transparent;
+	  font-size: 0.95rem;
+	  transition: 0.2s ease;
+	}
+
+	.btn:hover {
+	  background: var(--red);
+	  color: #fff;
+	}
+
+	.btn-secondary {
+	  border-color: #d6ccc1;
+	  color: var(--blue);
+	}
+
+	.btn-secondary:hover {
+	  background: var(--blue);
+	  border-color: var(--blue);
+	  color: #fff;
+	}
+
+	.feature-band {
+	  margin-top: 58px;
+	  background: rgba(255,255,255,0.7);
+	  border: 1px solid #e2d8cd;
+	  border-radius: 28px;
+	  padding: 30px 22px;
+	  box-shadow: var(--shadow);
+	}
+
+	.feature-band-grid {
+	  display: grid;
+	  grid-template-columns: repeat(3, 1fr);
+	  gap: 16px;
+	}
+
+	.mini-card {
+	  background: #fff;
+	  border: 1px solid #e8ddd2;
+	  border-radius: 18px;
+	  padding: 18px;
+	  text-align: center;
+	}
+
+	.mini-card h3 {
+	  margin: 0 0 8px;
+	  color: var(--blue);
+	  font-size: 1.2rem;
+	}
+
+	.mini-card p {
+	  margin: 0;
+	  color: var(--muted);
+	  font-size: 0.96rem;
+	}
+
+	.footer-nav {
+	  text-align: center;
+	  margin-top: 54px;
+	}
+
+	.footer-nav a {
+	  display: inline-block;
+	  color: var(--blue);
+	  border-bottom: 1px solid transparent;
+	  padding-bottom: 2px;
+	}
+
+	.footer-nav a:hover {
+	  border-color: var(--blue);
+	}
+
+	@media (max-width: 900px) {
+	  .card {
+		grid-column: span 12;
+	  }
+
+	  .feature-band-grid {
+		grid-template-columns: 1fr;
+	  }
+	}
+
+	@media (max-width: 640px) {
+	  .page-wrap {
+		padding: 18px 14px 48px;
+	  }
+
+	  .hero-sub {
+		font-size: 1rem;
+	  }
+
+	  .card-image {
+		height: 185px;
+	  }
+
+	  .card-body {
+		padding: 18px 16px 18px;
+	  }
+
+	  .card h3 {
+		font-size: 1.28rem;
+	  }
+
+	  .btn {
+		width: 100%;
+	  }
+	}
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+	<a class="top-link" href="index.html">← Back to Wedding Website</a>
+
+	<section class="hero">
+	  <div class="hero-kicker">Sandusky Favorites</div>
+	  <h1>Things To Do</h1>
+	  <p class="hero-sub">
+		While visiting, we hope you’ll check out some of our favorite places and
+		see why we love Sandusky.
+	  </p>
+	  <div class="red-lines">
+		<span></span>
+		<span></span>
+	  </div>
+	</section>
+
+	<nav class="quick-nav">
+	  <a href="#food-drinks">Food & Drinks</a>
+	  <a href="#shops-more">Shops & More</a>
+	  <a href="#bonus-stops">More Nearby</a>
+	</nav>
+
+	<section class="section" id="food-drinks">
+	  <div class="section-header">
+		<div class="eyebrow">Eat & Sip</div>
+		<h2>Food & Drinks</h2>
+		<p>Some of our go-to spots for date nights, drinks, good sandwiches, and a relaxed Sandusky vibe.</p>
+		<div class="divider"></div>
+	  </div>
+
+	  <div class="grid">
+		<article class="card">
+		  <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80');"></div>
+		  <div class="card-body">
+			<span class="tag">Date Night Favorite</span>
+			<h3>Crush & Pedlars Alley</h3>
+			<p>Our go-to for date nights.</p>
+			<p class="note">A great stop if you want a fun dinner atmosphere downtown.</p>
+			<div class="card-actions">
+			  <a class="btn" href="https://maps.google.com/?q=Crush+Winebar+Sandusky+OH" target="_blank" rel="noopener">Open in Maps</a>
+			
+			</div>
+		  </div>
+		</article>
+
+		<article class="card">
+		  <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1200&q=80');"></div>
+		  <div class="card-body">
+			<span class="tag">Beer Spot</span>
+			<h3>Daly’s Pub</h3>
+			<p>Great beer selection.</p>
+			<p class="note">A solid casual stop for drinks and hanging out with friends.</p>
+			<div class="card-actions">
+			  <a class="btn" href="https://maps.google.com/?q=Dalys+Pub+Sandusky+OH" target="_blank" rel="noopener">Open in Maps</a>
+			</div>
+		  </div>
+		</article>
+
+		<article class="card">
+		  <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80');"></div>
+		  <div class="card-body">
+			<span class="tag">Local Lunch</span>
+			<h3>Great Lakes Grinders & Shoreline Park</h3>
+			<p>Best sandwiches and a picnic view of Sandusky Bay.</p>
+			<p class="note">Grab lunch, then head to Shoreline Park for one of the best waterfront views in town.</p>
+			<div class="card-actions">
+			  <a class="btn" href="https://maps.google.com/?q=Great+Lakes+Grinders+Sandusky+OH" target="_blank" rel="noopener">Grinders in Maps</a>
+			  <a class="btn btn-secondary" href="https://maps.google.com/?q=Shoreline+Park+Sandusky+OH" target="_blank" rel="noopener">Park in Maps</a>
+			</div>
+		  </div>
+		</article>
+
+		<article class="card">
+		  <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1200&q=80');"></div>
+		  <div class="card-body">
+			<span class="tag">Chill Vibe</span>
+			<h3>Paddle Bar</h3>
+			<p>Lemonade shakeups and a chill vibe.</p>
+			<p class="note">Perfect for a casual stop if you want something fun and easy by the water.</p>
+			<div class="card-actions">
+			  <a class="btn" href="https://maps.google.com/?q=Paddle+Bar+Sandusky+OH" target="_blank" rel="noopener">Open in Maps</a>
+			</div>
+		  </div>
+		</article>
+
+		<article class="card">
+		  <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=80');"></div>
+		  <div class="card-body">
+			<span class="tag">Laura’s Favorite</span>
+			<h3>Jax Bar</h3>
+			<p>Laura’s favorite.</p>
+			<p class="note">A great local stop for drinks and a laid-back evening out.</p>
+			<div class="card-actions">
+			  <a class="btn" href="https://maps.google.com/?q=Jax+Bar+Sandusky+OH" target="_blank" rel="noopener">Open in Maps</a>
+			</div>
+		  </div>
+		</article>
+
+		<article class="card">
+		  <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80');"></div>
+		  <div class="card-body">
+			<span class="tag">Cocktails</span>
+			<h3>Volstead</h3>
+			<p>Fancy cocktails and good for a small group.</p>
+			<p class="note">A nice option if you want something a little more elevated.</p>
+			<div class="card-actions">
+			  <a class="btn" href="https://maps.google.com/?q=Volstead+Bar+Sandusky+OH" target="_blank" rel="noopener">Open in Maps</a>
+			</div>
+		  </div>
+		</article>
+	  </div>
+	</section>
+
+	<section class="section" id="shops-more">
+	  <div class="section-header">
+		<div class="eyebrow">Browse & Explore</div>
+		<h2>Shops & More</h2>
+		<p>A few favorite local places if you want gifts, sweets, or something uniquely Sandusky.</p>
+		<div class="divider"></div>
+	  </div>
+
+	  <div class="grid">
+		<article class="card">
+		  <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=80');"></div>
+		  <div class="card-body">
+			<span class="tag">Gifts</span>
+			<h3>Henry’s Shop</h3>
+			<p>A great local place to pick up gifts.</p>
+			<p class="note">Perfect for browsing if you want to take a little Sandusky home with you.</p>
+			<div class="card-actions">
+			  <a class="btn" href="https://maps.google.com/?q=Henrys+Shop+Sandusky+OH" target="_blank" rel="noopener">Open in Maps</a>
+			</div>
+		  </div>
+		</article>
+
+		<article class="card">
+		  <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80');"></div>
+		  <div class="card-body">
+			<span class="tag">Ice Cream & Nostalgia</span>
+			<h3>Soda Pops</h3>
+			<p>Toft’s famous ice cream, vintage candy, and games.</p>
+			<p class="note">A fun stop for families, kids, or anyone wanting an old-school treat.</p>
+			<div class="card-actions">
+			  <a class="btn" href="https://maps.google.com/?q=Soda+Pops+Sandusky+OH" target="_blank" rel="noopener">Open in Maps</a>
+			</div>
+		  </div>
+		</article>
+
+		<article class="card">
+		  <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=1200&q=80');"></div>
+		  <div class="card-body">
+			<span class="tag">Museum</span>
+			<h3>Merry-Go-Round Museum</h3>
+			<p>A really unique Sandusky attraction.</p>
+			<p class="note">Fun, colorful, and a memorable stop if you want something different.</p>
+			<div class="card-actions">
+			  <a class="btn" href="https://maps.google.com/?q=Merry-Go-Round+Museum+Sandusky+OH" target="_blank" rel="noopener">Open in Maps</a>
+			</div>
+		  </div>
+		</article>
+
+		<article class="card">
+		  <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1200&q=80');"></div>
+		  <div class="card-body">
+			<span class="tag">Lake Erie History</span>
+			<h3>Maritime Museum</h3>
+			<p>Learn more about the history of Lake Erie and Sandusky’s waterfront.</p>
+			<p class="note">A nice stop for guests who enjoy local history and the lakefront story of the area.</p>
+			<div class="card-actions">
+			  <a class="btn" href="https://maps.google.com/?q=Sandusky+Maritime+Museum+Sandusky+OH" target="_blank" rel="noopener">Open in Maps</a>
+			</div>
+		  </div>
+		</article>
+	  </div>
+	</section>
+
+	<section class="feature-band" id="bonus-stops">
+	  <div class="section-header" style="margin-bottom:24px;">
+		<div class="eyebrow">Worth The Trip</div>
+		<h2>More Nearby Favorites</h2>
+		<p>For guests turning the weekend into a little getaway.</p>
+		<div class="divider"></div>
+	  </div>
+
+	  <div class="feature-band-grid">
+		<div class="mini-card">
+		  <h3>Cedar Point</h3>
+		  <p>The roller coaster capital of the world and one of Sandusky’s biggest attractions.</p>
+		  <div class="card-actions" style="justify-content:center; margin-top:14px;">
+			<a class="btn" href="https://maps.google.com/?q=Cedar+Point+Sandusky+OH" target="_blank" rel="noopener">Open in Maps</a>
+		  </div>
+		</div>
+
+		<div class="mini-card">
+		  <h3>Put-in-Bay</h3>
+		  <p>A classic Lake Erie island day trip with restaurants, bars, and waterfront views.</p>
+		  <div class="card-actions" style="justify-content:center; margin-top:14px;">
+			<a class="btn" href="https://maps.google.com/?q=Put-in-Bay+OH" target="_blank" rel="noopener">Open in Maps</a>
+		  </div>
+		</div>
+
+		<div class="mini-card">
+		  <h3>Kelleys Island</h3>
+		  <p>A quieter island escape with scenic views, nature, and a relaxed lake vibe.</p>
+		  <div class="card-actions" style="justify-content:center; margin-top:14px;">
+			<a class="btn" href="https://maps.google.com/?q=Kelleys+Island+OH" target="_blank" rel="noopener">Open in Maps</a>
+		  </div>
+		</div>
+	  </div>
+	</section>
+
+	<div class="footer-nav">
+	  <a href="index.html">← Back to Laura & Michael’s Wedding Website</a>
+	</div>
+  </div>
+</body>
+</html>
