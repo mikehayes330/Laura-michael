@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,422 +7,550 @@
   <title>Hotels & Accommodations | Laura & Michael</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-	:root {
-	  --blue: #244a86;
-	  --red: #b64b4b;
-	  --text: #2d2d2d;
-	  --muted: #6b6b6b;
-	  --bg: #f4f1ec;
-	  --card: #ffffff;
-	  --shadow: 0 10px 30px rgba(0,0,0,0.06);
-	}
+    :root {
+      --blue: #244a86;
+      --red: #b64b4b;
+      --text: #2d2d2d;
+      --muted: #6b6b6b;
+      --bg: #f4f1ec;
+      --card: #ffffff;
+      --shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
 
-	* { box-sizing: border-box; }
+    * { box-sizing: border-box; }
 
-	html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; }
 
-	body {
-	  margin: 0;
-	  font-family: Georgia, "Times New Roman", serif;
-	  color: var(--text);
-	  background: var(--bg);
-	  line-height: 1.6;
-	}
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
 
-	a {
-	  color: inherit;
-	  text-decoration: none;
-	}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-	.page-wrap {
-	  max-width: 1120px;
-	  margin: 0 auto;
-	  padding: 24px 18px 64px;
-	}
+    .page-wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 24px 18px 64px;
+    }
 
-	.top-link {
-	  display: inline-flex;
-	  align-items: center;
-	  gap: 8px;
-	  font-size: 0.95rem;
-	  color: var(--blue);
-	  margin-bottom: 20px;
-	  border-bottom: 1px solid transparent;
-	}
+    .top-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.95rem;
+      color: var(--blue);
+      margin-bottom: 20px;
+      border-bottom: 1px solid transparent;
+    }
 
-	.top-link:hover {
-	  border-color: var(--blue);
-	}
+    .top-link:hover {
+      border-color: var(--blue);
+    }
 
-	.hero {
-	  text-align: center;
-	  padding: 18px 0 20px;
-	}
+    .hero {
+      text-align: center;
+      padding: 18px 0 20px;
+    }
 
-	.hero-kicker {
-	  text-transform: uppercase;
-	  letter-spacing: 0.2em;
-	  font-size: 0.78rem;
-	  color: var(--red);
-	  margin-bottom: 14px;
-	}
+    .hero-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.78rem;
+      color: var(--red);
+      margin-bottom: 14px;
+    }
 
-	.hero h1 {
-	  margin: 0;
-	  color: var(--blue);
-	  font-size: clamp(2.2rem, 5vw, 4.2rem);
-	  font-weight: 600;
-	  line-height: 1.05;
-	}
+    .hero h1 {
+      margin: 0;
+      color: var(--blue);
+      font-size: clamp(2.2rem, 5vw, 4.2rem);
+      font-weight: 600;
+      line-height: 1.05;
+    }
 
-	.hero-sub {
-	  max-width: 760px;
-	  margin: 18px auto 0;
-	  font-size: 1.08rem;
-	  color: var(--muted);
-	}
+    .hero-sub {
+      max-width: 760px;
+      margin: 18px auto 0;
+      font-size: 1.08rem;
+      color: var(--muted);
+    }
 
-	.red-lines {
-	  width: 180px;
-	  margin: 26px auto 0;
-	  display: flex;
-	  flex-direction: column;
-	  gap: 8px;
-	}
+    .red-lines {
+      width: 180px;
+      margin: 26px auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
 
-	.red-lines span {
-	  display: block;
-	  height: 2px;
-	  background: var(--red);
-	  border-radius: 999px;
-	}
+    .red-lines span {
+      display: block;
+      height: 2px;
+      background: var(--red);
+      border-radius: 999px;
+    }
 
-	.map-section,
-	.section {
-	  margin-top: 46px;
-	}
+    .map-section,
+    .section {
+      margin-top: 46px;
+    }
 
-	.section-header {
-	  text-align: center;
-	  margin-bottom: 26px;
-	}
+    .section-header {
+      text-align: center;
+      margin-bottom: 26px;
+    }
 
-	.section-header .eyebrow {
-	  text-transform: uppercase;
-	  letter-spacing: 0.16em;
-	  font-size: 0.74rem;
-	  color: var(--red);
-	  margin-bottom: 10px;
-	}
+    .section-header .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.74rem;
+      color: var(--red);
+      margin-bottom: 10px;
+    }
 
-	.section-header h2 {
-	  margin: 0;
-	  color: var(--blue);
-	  font-size: clamp(1.7rem, 3vw, 2.5rem);
-	  font-weight: 600;
-	}
+    .section-header h2 {
+      margin: 0;
+      color: var(--blue);
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      font-weight: 600;
+    }
 
-	.section-header p {
-	  max-width: 680px;
-	  margin: 12px auto 0;
-	  color: var(--muted);
-	}
+    .section-header p {
+      max-width: 680px;
+      margin: 12px auto 0;
+      color: var(--muted);
+    }
 
-	.divider {
-	  width: 130px;
-	  height: 2px;
-	  background: var(--red);
-	  margin: 18px auto 0;
-	  position: relative;
-	}
+    .divider {
+      width: 130px;
+      height: 2px;
+      background: var(--red);
+      margin: 18px auto 0;
+      position: relative;
+    }
 
-	.divider::after {
-	  content: "";
-	  width: 70px;
-	  height: 2px;
-	  background: var(--red);
-	  position: absolute;
-	  left: 50%;
-	  transform: translateX(-50%);
-	  top: 8px;
-	}
+    .divider::after {
+      content: "";
+      width: 70px;
+      height: 2px;
+      background: var(--red);
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 8px;
+    }
 
-	.map-frame {
-	  border: 3px solid var(--red);
-	  border-radius: 22px;
-	  overflow: hidden;
-	  background: #fff;
-	  box-shadow: var(--shadow);
-	}
+    .map-frame {
+      border: 3px solid var(--red);
+      border-radius: 22px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
 
-	.map-frame iframe {
-	  display: block;
-	  width: 100%;
-	  height: 440px;
-	  border: 0;
-	}
+    .map-frame iframe {
+      display: block;
+      width: 100%;
+      height: 440px;
+      border: 0;
+    }
 
-	.grid {
-	  display: grid;
-	  grid-template-columns: repeat(12, 1fr);
-	  gap: 18px;
-	}
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
 
-	.card {
-	  grid-column: span 6;
-	  background: var(--card);
-	  border: 1px solid #e6ddd4;
-	  border-radius: 22px;
-	  padding: 24px;
-	  box-shadow: var(--shadow);
-	  position: relative;
-	}
+    .card {
+      grid-column: span 6;
+      background: var(--card);
+      border: 1px solid #e6ddd4;
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
 
-	.card::before {
-	  content: "";
-	  position: absolute;
-	  top: 0;
-	  left: 0;
-	  right: 0;
-	  height: 4px;
-	  background: var(--red);
-	  border-radius: 22px 22px 0 0;
-	}
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--red);
+      border-radius: 22px 22px 0 0;
+    }
 
-	.tag {
-	  display: inline-block;
-	  margin-bottom: 12px;
-	  font-size: 0.78rem;
-	  letter-spacing: 0.14em;
-	  text-transform: uppercase;
-	  color: var(--red);
-	}
+    .tag {
+      display: inline-block;
+      margin-bottom: 12px;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
 
-	.card h3 {
-	  margin: 0 0 10px;
-	  color: var(--blue);
-	  font-size: 1.4rem;
-	  font-weight: 600;
-	}
+    .card h3 {
+      margin: 0 0 10px;
+      color: var(--blue);
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
 
-	.card p {
-	  margin: 0 0 12px;
-	}
+    .card p {
+      margin: 0 0 12px;
+    }
 
-	.muted {
-	  color: var(--muted);
-	}
+    .muted {
+      color: var(--muted);
+    }
 
-	.card-actions {
-	  display: flex;
-	  flex-wrap: wrap;
-	  gap: 10px;
-	  margin-top: 18px;
-	}
+    .hotel-meta {
+      margin: 12px 0 0;
+      padding: 0;
+      list-style: none;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
 
-	.btn {
-	  display: inline-flex;
-	  align-items: center;
-	  justify-content: center;
-	  min-height: 42px;
-	  padding: 10px 16px;
-	  border-radius: 999px;
-	  border: 1px solid var(--red);
-	  color: var(--red);
-	  background: transparent;
-	  font-size: 0.95rem;
-	  transition: 0.2s ease;
-	}
+    .hotel-meta li {
+      margin-bottom: 6px;
+    }
 
-	.btn:hover {
-	  background: var(--red);
-	  color: #fff;
-	}
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
 
-	.btn-secondary {
-	  border-color: #d6ccc1;
-	  color: var(--blue);
-	}
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--red);
+      color: var(--red);
+      background: transparent;
+      font-size: 0.95rem;
+      transition: 0.2s ease;
+    }
 
-	.btn-secondary:hover {
-	  background: var(--blue);
-	  border-color: var(--blue);
-	  color: #fff;
-	}
+    .btn:hover {
+      background: var(--red);
+      color: #fff;
+    }
 
-	.note-box {
-	  margin-top: 46px;
-	  background: #fff;
-	  border: 3px solid var(--red);
-	  border-radius: 22px;
-	  padding: 26px;
-	  box-shadow: var(--shadow);
-	  text-align: center;
-	}
+    .btn-secondary {
+      border-color: #d6ccc1;
+      color: var(--blue);
+    }
 
-	.note-box h2 {
-	  margin: 0 0 10px;
-	  color: var(--blue);
-	}
+    .btn-secondary:hover {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #fff;
+    }
 
-	.note-box p {
-	  max-width: 760px;
-	  margin: 12px auto;
-	  color: var(--text);
-	}
+    .note-box {
+      margin-top: 46px;
+      background: #fff;
+      border: 3px solid var(--red);
+      border-radius: 22px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
 
-	.footer-nav {
-	  text-align: center;
-	  margin-top: 54px;
-	}
+    .note-box h2 {
+      margin: 0 0 10px;
+      color: var(--blue);
+    }
 
-	.footer-nav a {
-	  display: inline-block;
-	  color: var(--blue);
-	  border-bottom: 1px solid transparent;
-	  padding-bottom: 2px;
-	}
+    .note-box p {
+      max-width: 760px;
+      margin: 12px auto;
+      color: var(--text);
+    }
 
-	.footer-nav a:hover {
-	  border-color: var(--blue);
-	}
+    .footer-nav {
+      text-align: center;
+      margin-top: 54px;
+    }
 
-	@media (max-width: 900px) {
-	  .card {
-		grid-column: span 12;
-	  }
-	}
+    .footer-nav a {
+      display: inline-block;
+      color: var(--blue);
+      border-bottom: 1px solid transparent;
+      padding-bottom: 2px;
+    }
 
-	@media (max-width: 640px) {
-	  .page-wrap {
-		padding: 18px 14px 48px;
-	  }
+    .footer-nav a:hover {
+      border-color: var(--blue);
+    }
 
-	  .hero-sub {
-		font-size: 1rem;
-	  }
+    @media (max-width: 900px) {
+      .card {
+        grid-column: span 12;
+      }
+    }
 
-	  .map-frame iframe {
-		height: 360px;
-	  }
+    @media (max-width: 640px) {
+      .page-wrap {
+        padding: 18px 14px 48px;
+      }
 
-	  .card {
-		padding: 20px 16px;
-	  }
+      .hero-sub {
+        font-size: 1rem;
+      }
 
-	  .btn {
-		width: 100%;
-	  }
-	}
+      .map-frame iframe {
+        height: 360px;
+      }
+
+      .card {
+        padding: 20px 16px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="page-wrap">
-	<a class="top-link" href="index.html">← Back to Wedding Website</a>
+    <a class="top-link" href="index.html">← Back to Wedding Website</a>
 
-	<section class="hero">
-	  <div class="hero-kicker">Stay Nearby</div>
-	  <h1>Hotels & Accommodations</h1>
-	  <p class="hero-sub">
-		For guests visiting from out of town, here are a few convenient places to stay
-		near the wedding weekend festivities.
-	  </p>
-	  <div class="red-lines">
-		<span></span>
-		<span></span>
-	  </div>
-	</section>
+    <section class="hero">
+      <div class="hero-kicker">Stay Nearby</div>
+      <h1>Hotels & Accommodations</h1>
+      <p class="hero-sub">
+        For guests visiting from out of town, here are a few convenient places to stay
+        near the wedding weekend festivities in Sandusky.
+      </p>
+      <div class="red-lines">
+        <span></span>
+        <span></span>
+      </div>
+    </section>
 
-	<section class="map-section">
-	  <div class="section-header">
-		<div class="eyebrow">Where To Stay</div>
-		<h2>Hotel Map</h2>
-		<p>Use this map to see hotel options in relation to the ceremony and reception.</p>
-		<div class="divider"></div>
-	  </div>
+    <section class="map-section">
+      <div class="section-header">
+        <div class="eyebrow">Where To Stay</div>
+        <h2>Hotel Map</h2>
+        <p>Use this map to see hotel options in relation to the ceremony and reception.</p>
+        <div class="divider"></div>
+      </div>
 
-	  <div class="map-frame">
-		<iframe
-		  src="PASTE_YOUR_GOOGLE_MAP_EMBED_URL_HERE"
-		  loading="lazy"
-		  allowfullscreen="">
-		</iframe>
-	  </div>
-	</section>
+      <div class="map-frame">
+        <iframe
+          src="PASTE_YOUR_GOOGLE_MAP_EMBED_URL_HERE"
+          loading="lazy"
+          allowfullscreen="">
+        </iframe>
+      </div>
+    </section>
 
-	<section class="section">
-	  <div class="section-header">
-		<div class="eyebrow">Recommended Stays</div>
-		<h2>Nearby Hotels</h2>
-		<p>A few options that are convenient for guests attending the wedding weekend.</p>
-		<div class="divider"></div>
-	  </div>
+    <section class="section">
+      <div class="section-header">
+        <div class="eyebrow">Recommended Stays</div>
+        <h2>Nearby Hotels</h2>
+        <p>
+          These are a few options guests may want to consider. Downtown hotels are closest
+          to the reception pier, while the Cedar Point Drive and Route 250 hotels are an easy
+          drive to both the ceremony and reception.
+        </p>
+        <div class="divider"></div>
+      </div>
 
-	  <div class="grid">
-		<article class="card">
-		  <span class="tag">Recommended Hotel</span>
-		  <h3>Hotel Name</h3>
-		  <p>Short description about why this is a good choice.</p>
-		  <p class="muted">Example: easy drive to the church, close to downtown, good for families.</p>
-		  <div class="card-actions">
-			<a class="btn" href="#" target="_blank" rel="noopener">Open in Maps</a>
-			<a class="btn btn-secondary" href="#" target="_blank" rel="noopener">Book Hotel</a>
-		  </div>
-		</article>
+      <div class="grid">
 
-		<article class="card">
-		  <span class="tag">Another Option</span>
-		  <h3>Hotel Name</h3>
-		  <p>Short description about this hotel option.</p>
-		  <p class="muted">Example: waterfront area, near restaurants, convenient for downtown guests.</p>
-		  <div class="card-actions">
-			<a class="btn" href="#" target="_blank" rel="noopener">Open in Maps</a>
-			<a class="btn btn-secondary" href="#" target="_blank" rel="noopener">Book Hotel</a>
-		  </div>
-		</article>
+        <article class="card">
+          <span class="tag">Closest To Reception</span>
+          <h3>Hotel Kilbourne</h3>
+          <p>
+            A boutique downtown hotel overlooking Sandusky Bay, very close to Jackson Street Pier
+            and walkable to restaurants, bars, and the waterfront.
+          </p>
+          <p class="muted">
+            Best for guests who want to stay downtown and be close to the reception, DORA district,
+            restaurants, and nightlife.
+          </p>
+          <ul class="hotel-meta">
+            <li><strong>Address:</strong> 223 West Water Street, Sandusky, OH 44870</li>
+            <li><strong>Phone:</strong> (844) 373-2223</li>
+            <li><strong>Good for:</strong> Downtown stay, walkable location, rooftop bar, boutique feel</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Hotel+Kilbourne+223+West+Water+Street+Sandusky+OH+44870" target="_blank" rel="noopener">Open in Maps</a>
+            <a class="btn btn-secondary" href="https://hotelkilbourne.com/" target="_blank" rel="noopener">Book Hotel</a>
+          </div>
+        </article>
 
-		<article class="card">
-		  <span class="tag">Good For Groups</span>
-		  <h3>Hotel Name</h3>
-		  <p>Short description about this option.</p>
-		  <p class="muted">Example: larger rooms, easy parking, simple highway access.</p>
-		  <div class="card-actions">
-			<a class="btn" href="#" target="_blank" rel="noopener">Open in Maps</a>
-			<a class="btn btn-secondary" href="#" target="_blank" rel="noopener">Book Hotel</a>
-		  </div>
-		</article>
+        <article class="card">
+          <span class="tag">Downtown Rental Style</span>
+          <h3>The Washington</h3>
+          <p>
+            A renovated historic home in downtown Sandusky with eight fully equipped rental units.
+            Each unit has a private entrance, bedroom, bathroom, and kitchen/dining area.
+          </p>
+          <p class="muted">
+            Best for guests who want more of a boutique rental feel, extra space, and a walkable
+            downtown location.
+          </p>
+          <ul class="hotel-meta">
+            <li><strong>Address:</strong> 333 E Washington Street, Sandusky, OH 44870</li>
+            <li><strong>Phone:</strong> 419-413-8270</li>
+            <li><strong>Good for:</strong> Small groups, couples, longer stays, downtown access</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=The+Washington+333+E+Washington+Street+Sandusky+OH+44870" target="_blank" rel="noopener">Open in Maps</a>
+            <a class="btn btn-secondary" href="https://www.thewashington333.com/" target="_blank" rel="noopener">Book Stay</a>
+          </div>
+        </article>
 
-		<article class="card">
-		  <span class="tag">Alternate Stay</span>
-		  <h3>Hotel Name</h3>
-		  <p>Short description for another place to stay.</p>
-		  <p class="muted">Example: affordable option, close to shopping, easy for weekend travelers.</p>
-		  <div class="card-actions">
-			<a class="btn" href="#" target="_blank" rel="noopener">Open in Maps</a>
-			<a class="btn btn-secondary" href="#" target="_blank" rel="noopener">Book Hotel</a>
-		  </div>
-		</article>
-	  </div>
-	</section>
+        <article class="card">
+          <span class="tag">Family Friendly</span>
+          <h3>Castaway Bay Indoor Waterpark Resort</h3>
+          <p>
+            A Cedar Point resort with a tropical indoor waterpark, family activities, dining options,
+            and easy access to Cedar Point and the surrounding Sandusky area.
+          </p>
+          <p class="muted">
+            Best for families traveling with kids or guests who want to turn the wedding weekend
+            into a mini Lake Erie getaway.
+          </p>
+          <ul class="hotel-meta">
+            <li><strong>Address:</strong> 2001 Cleveland Road, Sandusky, OH 44870</li>
+            <li><strong>Phone:</strong> (419) 627-2106</li>
+            <li><strong>Good for:</strong> Families, kids, indoor waterpark, resort-style stay</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Castaway+Bay+2001+Cleveland+Road+Sandusky+OH+44870" target="_blank" rel="noopener">Open in Maps</a>
+            <a class="btn btn-secondary" href="https://www.sixflags.com/castawaybay" target="_blank" rel="noopener">Book Hotel</a>
+          </div>
+        </article>
 
-	<section class="note-box">
-	  <h2>Room Block Information</h2>
-	  <div class="divider"></div>
-	  <p>Add your room block details here if you have one.</p>
-	  <p><strong>Example:</strong> Please book by June 20, 2026 and mention the Laura & Michael wedding block when reserving.</p>
-	</section>
+        <article class="card">
+          <span class="tag">Waterfront Hotel</span>
+          <h3>Holiday Inn Express & Suites Sandusky</h3>
+          <p>
+            A waterfront hotel near Cedar Point Drive with free breakfast, free Wi-Fi,
+            an indoor pool, and easy access to both downtown Sandusky and Cedar Point.
+          </p>
+          <p class="muted">
+            Best for guests who want a familiar hotel brand, simple parking, breakfast included,
+            and a location between downtown and Cedar Point.
+          </p>
+          <ul class="hotel-meta">
+            <li><strong>Address:</strong> 1515 Cedar Point Drive, Sandusky, OH 44870</li>
+            <li><strong>Phone:</strong> +1-419-624-1515</li>
+            <li><strong>Good for:</strong> Families, easy parking, free breakfast, indoor pool</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Holiday+Inn+Express+Suites+Sandusky+1515+Cedar+Point+Drive+Sandusky+OH+44870" target="_blank" rel="noopener">Open in Maps</a>
+            <a class="btn btn-secondary" href="https://www.ihg.com/holidayinnexpress/hotels/us/en/sandusky/skyes/hoteldetail" target="_blank" rel="noopener">Book Hotel</a>
+          </div>
+        </article>
 
-	<section class="note-box">
-	  <h2>Helpful Notes</h2>
-	  <div class="divider"></div>
-	  <p>Most hotel areas are a short drive to both the ceremony and reception.</p>
-	  <p>You may also want to mention whether guests should stay closer to downtown or closer to the causeway, depending on your preference.</p>
-	  <p>If you’d like, you can add a note here about Uber, Lyft, parking, or shuttle plans.</p>
-	</section>
+        <article class="card">
+          <span class="tag">Good For Groups</span>
+          <h3>Fairfield by Marriott Inn & Suites Sandusky</h3>
+          <p>
+            A newer hotel on Milan Road / Route 250 with free breakfast, free Wi-Fi,
+            an indoor pool, fitness center, and easy highway access.
+          </p>
+          <p class="muted">
+            Best for guests who want a clean, familiar hotel option with easy parking,
+            shopping, restaurants, and quick access to Route 2 or the turnpike.
+          </p>
+          <ul class="hotel-meta">
+            <li><strong>Address:</strong> 5410 Milan Road, Sandusky, OH 44870</li>
+            <li><strong>Phone:</strong> +1 419-621-9500</li>
+            <li><strong>Good for:</strong> Groups, families, free breakfast, easy highway access</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Fairfield+by+Marriott+Inn+Suites+Sandusky+5410+Milan+Road+Sandusky+OH+44870" target="_blank" rel="noopener">Open in Maps</a>
+            <a class="btn btn-secondary" href="https://www.marriott.com/en-us/hotels/clegv-fairfield-inn-and-suites-sandusky/overview/" target="_blank" rel="noopener">Book Hotel</a>
+          </div>
+        </article>
 
-	<div class="footer-nav">
-	  <a href="index.html">← Back to Laura & Michael’s Wedding Website</a>
-	</div>
+        <article class="card">
+          <span class="tag">Budget Friendly</span>
+          <h3>Baymont by Wyndham Sandusky</h3>
+          <p>
+            A budget-friendly option on Cleveland Road with free breakfast, free Wi-Fi,
+            fitness center, and free parking for cars, trucks, buses, and RVs.
+          </p>
+          <p class="muted">
+            Best for guests who want a simple, affordable stay close to Cedar Point,
+            downtown Sandusky, and the lakefront area.
+          </p>
+          <ul class="hotel-meta">
+            <li><strong>Address:</strong> 1711 Cleveland Road, Sandusky, OH 44870</li>
+            <li><strong>Phone:</strong> +1-419-625-4700</li>
+            <li><strong>Good for:</strong> Budget-friendly stay, easy parking, free breakfast</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Baymont+by+Wyndham+Sandusky+1711+Cleveland+Road+Sandusky+OH+44870" target="_blank" rel="noopener">Open in Maps</a>
+            <a class="btn btn-secondary" href="https://www.wyndhamhotels.com/baymont/sandusky-ohio/baymont-inn-and-suites-sandusky/overview" target="_blank" rel="noopener">Book Hotel</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="note-box">
+      <h2>Room Block Information</h2>
+      <div class="divider"></div>
+      <p>
+        We do not currently have a reserved room block. Guests are welcome to choose
+        whichever hotel works best for their plans and budget.
+      </p>
+      <p>
+        Because July is a busy time in Sandusky, we recommend booking early if you
+        plan to stay overnight.
+      </p>
+    </section>
+
+    <section class="note-box">
+      <h2>Helpful Notes</h2>
+      <div class="divider"></div>
+      <p>
+        If you want to be closest to the reception and downtown Sandusky, we recommend
+        looking at Hotel Kilbourne or The Washington first.
+      </p>
+      <p>
+        If you are traveling with kids or making a full weekend out of the trip,
+        Castaway Bay, Holiday Inn Express, Fairfield, or Baymont may be a better fit.
+      </p>
+      <p>
+        Most hotels listed are a short drive to both St. Mary’s Church and Jackson Street Pier.
+        Guests should plan extra time for summer weekend traffic, parking, and getting settled
+        before boarding the boat.
+      </p>
+      <p>
+        Rideshare options such as Uber or Lyft may be available, but guests should not rely on
+        them as the only transportation plan. Driving or coordinating rides with family and friends
+        is recommended.
+      </p>
+    </section>
+
+    <div class="footer-nav">
+      <a href="index.html">← Back to Laura & Michael’s Wedding Website</a>
+    </div>
   </div>
 </body>
 </html>
+```
